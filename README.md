@@ -1,4 +1,3 @@
-
 # 🕵️‍♂️ Deep Learning Homoglyph Detection
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -18,12 +17,10 @@ The model calculates the **Visual Euclidean Distance** between two rendered text
 * **Low Distance (< 0.5):** Visually confusing (High Phishing Risk).
 * **High Distance (> 0.5):** Visually distinct (Safe).
 
-> <img width="857" height="680" alt="image" src="https://github.com/user-attachments/assets/e9467e6b-7b66-43c9-acfb-6e67b6e33fde" />
-
-> **Example:**
-> * **Target:** `microsoft.com`
-> * **Attack:** `rn˛ｃ𝐫ంｓం𝐟𝐭𝅭ｃంrn` (Complex Unicode Spoof)
-> * **Result:** **Detected** (Visual Distance: 0.12)
+**Example Output:**
+* **Target:** `microsoft.com`
+* **Attack:** `rn˛ｃ𝐫ంｓం𝐟𝐭𝅭ｃంrn` (Complex Unicode Spoof)
+* **Result:** **Detected** (Visual Distance: 0.12)
 
 ---
 
@@ -36,19 +33,19 @@ The model calculates the **Visual Euclidean Distance** between two rendered text
 * **🛡️ Real-World Validation:** Validated against the `confusable_homoglyphs` library to ensure robustness against actual IDN (Internationalized Domain Name) attacks.
 
 ---
+
 ## 🧠 Model Architecture
 
 The project implements a **Siamese Network** with **Contrastive Loss**.
 
-```mermaid
-graph LR
-    A[Input Image A] --> B[Shared CNN Backbone]
-    C[Input Image B] --> B
-    B --> D[Feature Vector A]
-    B --> E[Feature Vector B]
-    D --> F[Euclidean Distance]
-    E --> F
-    F --> G["Similarity Score (0 to 1)"]
+```text
+[Input Image A] ----> [Shared CNN Backbone] ----> [Feature Vector A]
+                                                         |
+                                                    [Euclidean Distance] ----> Similarity Score (0-1)
+                                                         |
+[Input Image B] ----> [Shared CNN Backbone] ----> [Feature Vector B]
+
+```
 
 1. **Inputs:** Two grayscale images (128x64) containing the target URL and the suspect URL.
 2. **Backbone:** A shared Convolutional Neural Network (weights are tied) extracts high-level visual features.
