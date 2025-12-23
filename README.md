@@ -36,7 +36,6 @@ The model calculates the **Visual Euclidean Distance** between two rendered text
 * **🛡️ Real-World Validation:** Validated against the `confusable_homoglyphs` library to ensure robustness against actual IDN (Internationalized Domain Name) attacks.
 
 ---
-
 ## 🧠 Model Architecture
 
 The project implements a **Siamese Network** with **Contrastive Loss**.
@@ -47,10 +46,9 @@ graph LR
     C[Input Image B] --> B
     B --> D[Feature Vector A]
     B --> E[Feature Vector B]
-    D & E --> F[Euclidean Distance]
-    F --> G[Similarity Score (0 to 1)]
-
-```
+    D --> F[Euclidean Distance]
+    E --> F
+    F --> G["Similarity Score (0 to 1)"]
 
 1. **Inputs:** Two grayscale images (128x64) containing the target URL and the suspect URL.
 2. **Backbone:** A shared Convolutional Neural Network (weights are tied) extracts high-level visual features.
