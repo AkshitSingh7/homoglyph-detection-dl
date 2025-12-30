@@ -1,13 +1,13 @@
-# Python cache
+
 __pycache__/
 *.pyc
 
-# Data & Models
+
 saved_models/
 *.h5
 *.keras
 
-# IDEs
+
 .vscode/
 .idea/
 .ipynb_checkpoints/
