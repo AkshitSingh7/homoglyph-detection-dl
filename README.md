@@ -82,7 +82,7 @@ homoglyph-detection/
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/YOUR_USERNAME/homoglyph-detection-dl.git](https://github.com/YOUR_USERNAME/homoglyph-detection-dl.git)
+git clone [https://github.com/AkshitSingh7/homoglyph-detection-dl.git](https://github.com/AkshitSingh7/homoglyph-detection-dl.git)
 cd homoglyph-detection-dl
 
 ```
