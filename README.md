@@ -71,8 +71,8 @@ homoglyph-detection/
 │   └── utils.py            # Font downloading and helper functions
 │
 ├── saved_models/           # Stores trained model weights (.keras)
-├── requirements.txt        # Python dependencies
-└── README.md               # Documentation
+├── requirements.txt        
+└── README.md               
 
 ```
 
